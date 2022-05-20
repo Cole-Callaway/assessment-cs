@@ -1,0 +1,25 @@
+Results for the extraLargeArray
+insert 905.0046 ms
+append 3.1267 ms
+
+Results for the largeArray
+insert 9.1705 ms
+append 677.9 μs
+
+Results for the mediumArray
+insert 198 μs
+append 143 μs
+
+Results for the smallArray
+insert 50.5 μs
+append 84.1 μs
+
+Results for the tinyArray
+insert 36.5 μs
+append 73.9 μs
+
+
+The pattern that I see with these functions in that the smaller the array the faster the insert method works 
+and the slower the append method works.
+Append scales better with the array getting larger because it doesn't make a large leap 
+ 
