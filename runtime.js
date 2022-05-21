@@ -45,6 +45,95 @@ perf.start();
 doublerInsert(tinyArray);
 let resultsInsert = perf.stop();
 
-console.log("Results for the tinyArray");
-console.log("insert", resultsInsert.preciseWords);
-console.log("append", resultsAppend.preciseWords);
+// console.log("Results for the tinyArray");
+// console.log("insert", resultsInsert.preciseWords);
+// console.log("append", resultsAppend.preciseWords);
+
+//1 sum zero
+let array = [28, 43, -12, 30, 4, 0, 12];
+
+let value = "false";
+for (let i = 0; i < array.length; i++) {
+  for (let j = 0; j < array.length; j++) {
+    if (i !== j) {
+      if (array[i] + array[j] === 0) {
+        value = "true";
+      }
+    }
+  }
+}
+
+console.log("value", value);
+// space complexity O(1)
+
+//2 unique characters
+const hasUniqueChars = (word) => {
+  let uniqueChars = new Set([]);
+  for (let i = 0; i < word.length; i++) {
+    uniqueChars.add(word[i]);
+  }
+  return uniqueChars.size === word.length;
+};
+// timer on function
+perf.start();
+hasUniqueChars(smallArray);
+let resultsHasUniqueChars = perf.stop();
+console.log("hasUniqueChars", resultsHasUniqueChars.preciseWords);
+
+console.log(hasUniqueChars("monday"), "hasUniqueChars");
+console.log(hasUniqueChars("moonday"), "hasUniqueChars");
+// space complexity O(1)
+
+//3 pangram sentence
+const isPangramSentence = (string) => {
+  let strArr = string.toLowerCase();
+  let alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+  for (let i = 0; i < alphabet.length; i++) {
+    if (strArr.indexOf(alphabet[i]) < 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+//timer start
+perf.start();
+hasUniqueChars(largeArray);
+let resultsIsPangramSentence = perf.stop();
+console.log("IsPangramSentence", resultsIsPangramSentence.preciseWords);
+
+console.log(
+  isPangramSentence("The quick brown fox jumps over the lazy dog!"),
+  "isPangramSentence"
+);
+console.log(
+  isPangramSentence("I like cats, but not mice"),
+  "isPangramSentence"
+);
+// space complexity O(n)
+
+//4 longest word
+
+const longestWordChallenge = (str) => {
+  let strSplit = str.split(" ");
+
+  let longestWord = 0;
+
+  for (let i = 0; i < strSplit.length; i++) {
+    if (strSplit[i].length > longestWord) {
+      longestWord = strSplit[i].length;
+    }
+  }
+
+  return str.length;
+};
+
+//timer start
+perf.start();
+longestWordChallenge("hello world");
+let resultsLongestWordChallenge = perf.stop();
+console.log("longestWordChallenge", resultsLongestWordChallenge.preciseWords);
+
+console.log(longestWordChallenge("hello world"), "longestWord");
+// space complexity O(n)

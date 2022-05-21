@@ -21,5 +21,5 @@ append 73.9 μs
 
 The pattern that I see with these functions in that the smaller the array the faster the insert method works 
 and the slower the append method works.
-Append scales better with the array getting larger because it doesn't make a large leap 
+Append scales better with the array getting larger because it starts pretty fast and doesn't slow down as much as insert.
  
