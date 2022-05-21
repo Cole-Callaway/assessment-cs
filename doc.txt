@@ -18,6 +18,15 @@ Results for the tinyArray
 insert 36.5 μs
 append 73.9 μs
 
+Results for hasUniqueChars
+hasUniqueChars 47.8 μs
+
+Results for isPangramSentence
+IsPangramSentence 1.3541 ms
+
+Results for longestWordChallenge
+longestWordChallenge 40.5 μs
+
 
 The pattern that I see with these functions in that the smaller the array the faster the insert method works 
 and the slower the append method works.
